@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+/* reset basic default browser styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ✅ Khai báo màu mặc định */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --text-color: #212529;
+    --background-color: #ffffff;
+}
