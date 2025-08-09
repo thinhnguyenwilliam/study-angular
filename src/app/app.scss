@@ -2,28 +2,109 @@
 $primary-color: #007bff;
 $hover-bg: #ddd;
 
-a {
-    text-decoration: none;
-    color: black;
-    padding: 6px 10px;
-    border-radius: 4px;
-    transition: background-color 0.2s;
+.header {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // subtle shadow
+    position: relative; // keeps it above content
+    z-index: 10; // ensures it’s not hidden
+}
 
-    &:hover {
-        background-color: $hover-bg;
+// Since you’re building a top header, you might also want it sticky:
+// .header {
+//   position: sticky;
+//   top: 0;
+//   background: white; // prevents transparent gap
+// }
+
+
+
+.inner-menu {
+    ul {
+        display: inline-flex;
     }
 
-    &.active {
-        font-weight: bold;
-        color: white;
-        background-color: #007bff;
+    a {
+        color: black;
+        padding: 6px 10px;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: $hover-bg;
+        }
+
+        &.active {
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+        }
     }
 }
 
-.inner-top{
+.inner-top {
     background-color: var(--color-main);
     color: var(--color-highlight);
     font-size: 18px;
     text-align: center;
     padding: 8px 0;
+}
+
+.inner-wrap {
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    align-items: center;
+}
+
+.inner-logo {
+    a {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    img {
+        height: 50px;
+        width: auto;
+    }
+
+    span {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--color-main);
+        margin-left: 5px;
+    }
+}
+
+.inner-social {
+    ul {
+        display: inline-flex;
+        gap: 15px;
+
+        li a {
+            font-size: 20px;
+            color: #333;
+            transition: color 0.2s, transform 0.2s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+
+            .fa-facebook-f:hover {
+                color: #3b5998;
+            }
+
+            .fa-instagram:hover {
+                color: #e1306c;
+            }
+
+            .fa-twitter:hover {
+                color: #1da1f2;
+            }
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
 }
