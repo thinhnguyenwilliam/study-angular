@@ -1,18 +1,29 @@
 /* styles.scss */
+$primary-color: #007bff;
+$hover-bg: #ddd;
+
 a {
     text-decoration: none;
     color: black;
     padding: 6px 10px;
     border-radius: 4px;
     transition: background-color 0.2s;
+
+    &:hover {
+        background-color: $hover-bg;
+    }
+
+    &.active {
+        font-weight: bold;
+        color: white;
+        background-color: #007bff;
+    }
 }
 
-a:hover {
-    background-color: #ddd;
-}
-
-a.active {
-    font-weight: bold;
-    color: white;
-    background-color: #007bff;
+.inner-top{
+    background-color: var(--color-main);
+    color: var(--color-highlight);
+    font-size: 18px;
+    text-align: center;
+    padding: 8px 0;
 }

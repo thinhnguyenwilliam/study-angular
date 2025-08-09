@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   standalone: true,
@@ -13,4 +14,11 @@ export class Home {
     { id: 2, name: 'Banana', price: 5 },
     { id: 3, name: 'Cherry', price: 15 }
   ];
+
+  safeUrl: SafeResourceUrl;
+
+  constructor(private readonly sanitizer: DomSanitizer) {
+    this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/3qBXWUpoPHo');
+  }
+
 }

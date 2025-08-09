@@ -1,1 +1,66 @@
-<p>about works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+    <!-- Name -->
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" />
+    @if (form.get('name')?.touched && form.get('name')?.invalid) {
+    <div class="error">
+        @if (form.get('name')?.errors?.['required']) {
+        <small>Name is required.</small>
+        }
+        @if (form.get('name')?.errors?.['minlength']) {
+        <small>Minimum 3 characters.</small>
+        }
+        @if (form.get('name')?.errors?.['maxlength']) {
+        <small>Maximum 20 characters.</small>
+        }
+        @if (form.get('name')?.errors?.['pattern']) {
+        <small>Only letters and spaces allowed.</small>
+        }
+    </div>
+    }
+
+
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" />
+
+    @if (form.get('email')?.touched && form.get('email')?.invalid) {
+    <div class="error">
+        @if (form.get('email')?.errors?.['required']) {
+        <small>Email is required.</small>
+        }
+        @if (form.get('email')?.errors?.['email']) {
+        <small>Invalid email format.</small>
+        }
+    </div>
+    }
+
+    <!-- Gender -->
+    <label for="gender">Gender:</label>
+    <select id="gender" formControlName="gender">
+        <option value="">-- Select Gender --</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+    </select>
+    @if (form.get('gender')?.touched && form.get('gender')?.invalid) {
+    <small class="error">Please select a gender.</small>
+    }
+
+    <!-- Message -->
+    <label for="message">Message:</label>
+    <textarea id="message" formControlName="message" rows="4"></textarea>
+    @if (form.get('message')?.touched && form.get('message')?.invalid) {
+    <div class="error">
+        @if (form.get('message')?.errors?.['required']) {
+        <small>Message is required.</small>
+        }
+        @if (form.get('message')?.errors?.['minlength']) {
+        <small>At least 10 characters.</small>
+        }
+    </div>
+    }
+
+    <button type="submit">Submit</button>
+</form>
