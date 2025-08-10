@@ -10,4 +10,11 @@ import { RouterOutlet, RouterModule } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('study-angular');
+
+  showSocial = false;
+
+  toggleSocialMenu() {
+    this.showSocial = !this.showSocial;
+    console.log('Show social menu:', this.showSocial);
+  }
 }

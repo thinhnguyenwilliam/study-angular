@@ -64,7 +64,14 @@
                 </div>
 
                 <div class="inner-social">
-                    <ul>
+                    <!-- Toggle button (only shown on small screens) -->
+                    <button class="social-toggle" (click)="toggleSocialMenu()">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+
+                    <!-- If showSocial is true → <ul> will have class="show" added.
+                    If showSocial is false → Angular removes the show class from the element. -->
+                    <ul [class.show]="showSocial">
                         <li>
                             <a href="https://facebook.com" target="_blank" aria-label="Facebook">
                                 <!-- <img src="assets/icons/facebook.png" alt="Facebook"> -->
@@ -83,6 +90,8 @@
                         </li>
                     </ul>
                 </div>
+
+
             </div>
         </div>
     </div>
